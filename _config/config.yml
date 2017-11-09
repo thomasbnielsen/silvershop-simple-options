@@ -1,0 +1,21 @@
+---
+Name: silvershop-simple-options
+After:
+  - silvershop/*
+---
+Product:
+  order_item: SimpleOptionOrderItem
+  extensions:
+    - "Silvershop\SimpleOptions\Extensions\ProductOptionsExtension"
+OrderItem:
+  extensions:
+    - "Silvershop\SimpleOptions\Extensions\OrderItemExtension"
+Order:
+  extensions:
+    - "Silvershop\SimpleOptions\Extensions\OrderExtension"
+
+
+### INJECTOR
+Injector:
+  ShoppingCart:
+    class: "Silvershop\SimpleOptions\ShoppingCart"
