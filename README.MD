@@ -3,6 +3,10 @@ User can create a simple options called something like "Size", and add values to
 
 Each value can also have a price defined which gets added on top of the product price.
 
+### Install ###
+```
+composer require nobrainerweb/silvershop-simple-options
+```
 
 This module was inspired by Magento's product options functionality
 
