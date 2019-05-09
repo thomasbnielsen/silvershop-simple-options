@@ -17,6 +17,3 @@ Its much easier to create these instead of variations (UI wise). Variations have
 This form of variations on a product does require the shop owner to handle any combination of options that actually dont exist in real life.
 
 You can not use both Variations and simple options at the same time, on a product
-
-## ANOTHER IMPORTANT ###
-This modul was created a bit fast and might not be completely stable. Use at own risk pls
