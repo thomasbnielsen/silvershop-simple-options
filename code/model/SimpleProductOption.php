@@ -172,4 +172,21 @@ class SimpleProductOption extends DataObject
     {
         return 'ProductOptions_' . $id;
     }
+
+    public function duplicate($doWrite = true)
+    {
+        $clone = parent::duplicate($doWrite);
+
+        $values = $this->Values();
+        if ($values->exists()) {
+            foreach ($values as $value) {
+                $clonedVal = $value->duplicate();
+                $clone->Values()->add($clonedVal);
+            }
+        }
+
+        $clone->invokeWithExtensions('onAfterDuplicate', $this, $doWrite);
+
+        return $clone;
+    }
 }

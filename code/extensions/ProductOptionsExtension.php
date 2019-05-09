@@ -51,4 +51,17 @@ class ProductOptionsExtension extends \DataExtension
             $controller->formclass = 'SimpleOptionsForm';
         }
     }
+
+    public function onAfterDuplicate($original, $doWrite)
+    {
+        $options = $original->ProductOptions();
+        if(!$options->exists()){
+            return;
+        }
+
+        foreach ($options as $option){
+            $clonedOption = $option->duplicate();
+            $this->owner->ProductOptions()->add($clonedOption);
+        }
+    }
 }
